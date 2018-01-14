@@ -1,7 +1,6 @@
 #!/bin/bash
 
 BASEDIR=$(dirname "$0")
-echo "$BASEDIR"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
