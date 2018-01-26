@@ -9,7 +9,7 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
     pkg install tmux
 fi
 
-cp $BASEDIR/{.gitconfig,.tmux.conf,.vimrc} ~/
+cp $BASEDIR/{./git/.gitconfig,./tmux/.tmux.conf,./vim/.vimrc} ~/
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
