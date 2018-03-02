@@ -7,17 +7,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Syntastic'
+Plugin 'AutoClose'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Nopik/vim-nerdtree-direnter'
 Plugin 'beigebrucewayne/Turtles'
 Plugin 'dikiaap/minimalist'
 Plugin 'junegunn/vim-emoji'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
 
-color Turtles
+colorscheme Turtles
 
 syntax enable                           " Enable default syntax highlighting
 
@@ -43,23 +45,37 @@ set noerrorbells                        " Disable error sound
 set completefunc=emoji#complete
 
 autocmd BufWritePre * %s/\s\+$//e       " Remove trailing white space on write (dangerous if extra space is desired)
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif   " Closes VIM if the only window left is NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif                             " +^ Opens NERDTree if no file was specified"
 
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>tN :tabnew<CR>
+nmap <leader>tp :tabp<CR>
+nmap <leader>tn :tabn<CR>
+
+au FileType c,cpp setlocal comments-=:// comments+=f://         " Disable multiple line comment insertions for single line comment
+
+:map <Leader>em :s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
+
+nnoremap <Esc>A <up>                    " Stop the arrow key rewrites when using vim in tmux
+nnoremap <Esc>B <down>
+nnoremap <Esc>C <right>
+nnoremap <Esc>D <left>
+inoremap <Esc>A <up>
+inoremap <Esc>B <down>
+inoremap <Esc>C <right>
+inoremap <Esc>D <left>
 
 if has('win32')
 elseif has('mac')
 elseif has('unix')
 endif
 
-" Gitgutter
-"let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
-"let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
-"let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
-"let g:gitgutter_sign_modified_removed = emoji#for('collision')
-
 " NERDtree
 let g:NERDTreeDirArrowExpandable = '├'
 let g:NERDTreeDirArrowCollapsible = '└'
+let NERDTreeShowHidden=1
 "let NERDTreeMapOpenInTab='<ENTER>'
 
 " YCM
@@ -74,4 +90,3 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
