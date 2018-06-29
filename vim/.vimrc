@@ -19,7 +19,7 @@ Plugin 'vim-airline/vim-airline'
 call vundle#end()
 filetype plugin indent on
 
-colorscheme Turtles
+colorscheme turtles
 
 syntax enable                           " Enable default syntax highlighting
 
@@ -90,3 +90,16 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Airline
+let g:airline#extensions#hunks#enabled=1
+let g:airline#extensions#branch#enabled=1
+
+
+"set runtimepath-=~/.vim/bundle/YouCompleteMe
+"set runtimepath-=~/.vim/bundle/Syntastic
+"set runtimepath-=~/.vim/bundle/nerdtree
+"set runtimepath-=~/.vim/bundle/vim-gitgutter
+"set runtimepath-=~/.vim/bundle/Vundle.vim
+"set runtimepath-=~/.vim/bundle/minimalist
+"set runtimepath-=~/.vim/bundle/vim-nerdtree-direnter
