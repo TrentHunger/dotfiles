@@ -25,6 +25,7 @@ syntax enable                           " Enable default syntax highlighting
 
 let mapleader=","                       " Change mapleader
 
+set guioptions=                         " Disable scrollbars in GUI
 set mouse=a                             " Enable mouse
 set number                              " Enable line numbers
 set clipboard=unnamed                   " Enable system clipboard
@@ -47,7 +48,7 @@ set completefunc=emoji#complete
 autocmd BufWritePre * %s/\s\+$//e       " Remove trailing white space on write (dangerous if extra space is desired)
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif   " Closes VIM if the only window left is NERDTree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif                             " +^ Opens NERDTree if no file was specified"
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree ~/Developer | endif                 " +^ Opens NERDTree if no file was specified"
 
 nmap <leader>nt :NERDTreeToggle<CR>
 nmap <leader>tN :tabnew<CR>
