@@ -1,0 +1,79 @@
+{
+    /*  Extensions:
+            C/C++, C#, GitLens, Python, Vim, vscode-icons
+
+        Settings Locations:
+            Windows %APPDATA%\Code\User\settings.json
+            macOS $HOME/Library/Application Support/Code/User/settings.json
+            Linux $HOME/.config/Code/User/settings.json
+
+        Workspace Settings:
+            In `.vscode` folder that is under the root folder
+
+        macOS:
+            defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+    */
+
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c11",
+
+    "csharp.suppressDotnetInstallWarning": true,
+
+    "editor.cursorBlinking": "expand",
+    "editor.emptySelectionClipboard": false,
+    "editor.fontSize": 14,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+
+    "extensions.ignoreRecommendations": true,
+
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+
+    "git.enableCommitSigning": true,
+
+    "gitlens.blame.ignoreWhitespace": true,
+
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe", // Change this
+
+    "vim.cmdLineInitialColon": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-n>": false
+    },
+    "vim.hlsearch": true,
+    "vim.leader": ",",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["leader", "nT"],
+            "after": ["<C-n>"]
+        }
+    ],
+    "vim.statusBarColorControl": true,
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    "vim.statusBarColors.normal": "#1841ca",
+
+    "window.menuBarVisibility": "toggle",   // Used in Windows
+    "window.newWindowDimensions": "maximized",
+    "window.restoreFullscreen": true,
+    "window.restoreWindows": "all",
+
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#1841ca",
+        "statusBar.debuggingBackground": "#1841ca",
+        "statusBar.noFolderBackground": "#1841ca"
+    },
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.editor.openPositioning": "last",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.sideBar.location": "left"
+}
