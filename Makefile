@@ -17,9 +17,9 @@ dotfiles:
 	ln -sfn $(CURDIR)/bin $(HOME)/.bin
 
 	if [[ -d $(HOME)/Library/Application\ Support/Code/User/ ]]; then \
-        ln -sfn $(CURDIR)/settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json; \
+		ln -sfn $(CURDIR)/settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json; \
 	elif [[ -d "$(HOME)/.config/Code/User/" ]]; then \
-        ln -sfn $(CURDIR)/settings.json $(HOME)/.config/Code/User/settings.json; \
+		ln -sfn $(CURDIR)/settings.json $(HOME)/.config/Code/User/settings.json; \
 	fi
 
 	git clone -b master --single-branch https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

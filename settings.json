@@ -2,16 +2,8 @@
     /*  Extensions:
             C/C++, C#, GitLens, Python, Vim, vscode-icons
 
-        Settings Locations:
-            Windows %APPDATA%\Code\User\settings.json
-            macOS $HOME/Library/Application Support/Code/User/settings.json
-            Linux $HOME/.config/Code/User/settings.json
-
         Workspace Settings:
             In `.vscode` folder that is under the root folder
-
-        macOS:
-            defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
     */
 
     "C_Cpp.default.cppStandard": "c++17",
@@ -75,5 +67,9 @@
     "workbench.colorTheme": "Visual Studio Dark",
     "workbench.editor.openPositioning": "last",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.sideBar.location": "left"
+    "workbench.sideBar.location": "left",
+
+    "[makefile]": {
+        "editor.insertSpaces": false
+    }
 }
