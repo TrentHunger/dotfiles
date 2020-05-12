@@ -19,7 +19,7 @@ Plugin 'vim-airline/vim-airline'
 call vundle#end()
 filetype plugin indent on
 
-colorscheme turtles
+colorscheme Turtles
 
 syntax enable                           " Enable default syntax highlighting
 
@@ -68,16 +68,10 @@ inoremap <Esc>B <down>
 inoremap <Esc>C <right>
 inoremap <Esc>D <left>
 
-if has('win32')
-elseif has('mac')
-elseif has('unix')
-endif
-
 " NERDtree
 let g:NERDTreeDirArrowExpandable = '├'
 let g:NERDTreeDirArrowCollapsible = '└'
 let NERDTreeShowHidden=1
-"let NERDTreeMapOpenInTab='<ENTER>'
 
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -95,12 +89,3 @@ let g:syntastic_check_on_wq = 0
 " Airline
 let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#branch#enabled=1
-
-
-"set runtimepath-=~/.vim/bundle/YouCompleteMe
-"set runtimepath-=~/.vim/bundle/Syntastic
-"set runtimepath-=~/.vim/bundle/nerdtree
-"set runtimepath-=~/.vim/bundle/vim-gitgutter
-"set runtimepath-=~/.vim/bundle/Vundle.vim
-"set runtimepath-=~/.vim/bundle/minimalist
-"set runtimepath-=~/.vim/bundle/vim-nerdtree-direnter
